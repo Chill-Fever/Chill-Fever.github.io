@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/estiloPaginas.css" type="text/css">
+    <title>Document</title>
+</head>
+<body>
+    <svg width="1750" height = "900">     
+        <linearGradient id="gradiente1" x1="0" y1="0" x2="0" y2="100%">
+            <stop offset="60%" style="stop-color:rgb(142, 145, 199)"/>
+            <stop offset="100%" style="stop-color:rgb(255, 188, 86)"/>
+        </linearGradient>
+        <linearGradient id="gradiente2" x1="0" y1="0" x2="40%" y2="100%">
+            <stop offset="25%" style="stop-color:rgb(63, 38, 20)"/>
+            <stop offset="100%" style="stop-color:rgb(24, 16, 8)"/>
+        </linearGradient>            
+        <radialGradient id="gradiente3" x1="0" y1="0" x2="40%" y2="100%">
+            <stop offset="0%" style="stop-color:rgb(255, 254, 194)"/>
+            <stop offset="20%" style="stop-color:rgb(248, 247, 154)"/>
+            <stop offset="100%" style="stop-color:rgba(255, 255, 255, 0)"/>            
+        </radialGradient>        
+        <radialGradient id="gradiente4" x1="0" y1="0" x2="40%" y2="100%">
+            <stop offset="0%" style="stop-color:rgb(255, 255, 255)"/>            
+            <stop offset="100%" style="stop-color:rgba(255, 255, 255, 0.342)"/>            
+        </radialGradient> 
+        <rect x="0" y="0" width="100%" height="100%" rx="0" ry="0" fill = "url(#gradiente1)" style = "stroke: rgb(0, 0, 0); stroke-width:7"/>
+        <circle cx ="50%" cy ="70%" r = "380" fill = "url(#gradiente3)" />        
+        <defs>
+            <ellipse id="nube" rx = "200" ry = "80" fill = "url(#gradiente4)">
+                <animateMotion path="M 100 0 L 0 0" dur="20s" fill="freeze"/>
+            </ellipse>
+            <polyline id="montana" points="0 720, 100 500 230 350,250 300,450 500, 500 600,550 720, 600 500, 700 350,750 400,900 500 ,1000 650,1080 720, 0 720" style = "fill:url(#gradiente2)"/>    
+        </defs>                    
+        <rect x="10%" y="4%" width="80%" height="15%" rx="0" ry="0" fill = "white" style = "stroke: rgb(0, 0, 0); stroke-width:5"/>
+        <text class="narrador" x="11%" y="15%" fill = "black" > 
+            Dentro de las montañas...
+        </text>     
+        <use x="10%" y = "60%" xlink:href = "#nube"/>
+        <use x="15%" y = "60%" xlink:href = "#nube"/>
+        <use x="20%" y = "60%" xlink:href = "#nube"/>
+        <use x="30%" y = "20%" xlink:href = "#montana"/>
+        <use x="0%" y = "20%" xlink:href = "#montana"/>
+        <use x="20%" y = "70%" xlink:href = "#nube"/>
+        <use x="25%" y = "70%" xlink:href = "#nube"/>
+        <use x="30%" y = "70%" xlink:href = "#nube"/>        
+        <use x="-40%" y = "20%" xlink:href = "#montana"/>
+        <use x="60%" y = "60%" xlink:href = "#nube"/>
+        <use x="65%" y = "60%" xlink:href = "#nube"/>
+        <use x="70%" y = "60%" xlink:href = "#nube"/>
+        <use x="80%" y = "80%" xlink:href = "#nube"/>
+        <use x="85%" y = "80%" xlink:href = "#nube"/>
+        <use x="90%" y = "80%" xlink:href = "#nube"/>
+        <use x="20%" y = "20%" xlink:href = "#montana"/>
+        <use x="50%" y = "20%" xlink:href = "#montana"/>
+        <use x="55%" y = "70%" xlink:href = "#nube"/>
+        <use x="60%" y = "70%" xlink:href = "#nube"/>
+        <use x="65%" y = "70%" xlink:href = "#nube"/>
+        <use x="30%" y = "80%" xlink:href = "#nube"/>
+        <use x="35%" y = "80%" xlink:href = "#nube"/>
+        <use x="40%" y = "80%" xlink:href = "#nube"/>
+        <use x="0%" y = "90%" xlink:href = "#nube"/>
+        <use x="5%" y = "90%" xlink:href = "#nube"/>
+        <use x="10%" y = "90%" xlink:href = "#nube"/>
+
+    </svg>
+    <a class="siguiente" href="pagina2.html">Siguiente</a>
+</body>
+</html>

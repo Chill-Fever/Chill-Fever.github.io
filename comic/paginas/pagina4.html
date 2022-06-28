@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/estiloPaginas.css" type="text/css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <svg width="1750" height = "900">     
+        <linearGradient id="gradiente1" x1="0" y1="0" x2="0" y2="100%">
+            <stop offset="60%" style="stop-color:rgb(142, 145, 199)"/>
+            <stop offset="100%" style="stop-color:rgb(106, 95, 173)"/>
+        </linearGradient>
+        <linearGradient id="gradiente2" x1="0" y1="0" x2="60%" y2="100%">
+            <stop offset="20%" style="stop-color:rgb(190, 127, 82)"/>
+            <stop offset="100%" style="stop-color:rgb(54, 36, 18)"/>
+        </linearGradient>            
+        <linearGradient id="gradiente3" x1="0" y1="0" x2="60%" y2="100%">
+            <stop offset="3%" style="stop-color:rgb(39, 39, 39)"/>
+            <stop offset="100%" style="stop-color:rgb(0, 0, 0)"/>
+        </linearGradient>   
+        <radialGradient id="gradiente4" x1="0" y1="0" x2="40%" y2="100%">
+            <stop offset="0%" style="stop-color:rgb(255, 255, 255)"/>            
+            <stop offset="100%" style="stop-color:rgba(255, 255, 255, 0.342)"/>            
+        </radialGradient> 
+        <linearGradient id="gradiente5" x1="0" y1="0" x2="0%" y2="100%">
+            <stop offset="25%" style="stop-color:rgb(156, 106, 55)"/>
+            <stop offset="100%" style="stop-color:rgb(126, 81, 39)"/>
+        </linearGradient>            
+        <linearGradient id="gradiente6" x1="0" y1="100%" x2="0%" y2="0%">
+            <stop offset="80%" style="stop-color:rgb(54, 36, 18)"/>
+            <stop offset="100%" style="stop-color:rgb(190, 127, 82)"/>
+        </linearGradient>            
+        <linearGradient id="gradiente7" x1="0" y1="0" x2="0%" y2="100%">
+            <stop offset="10%" style="stop-color:rgb(56, 37, 20)"/>
+            <stop offset="100%" style="stop-color:rgb(153, 107, 61)"/>
+        </linearGradient>    
+        <defs>
+            <ellipse id="nube" rx = "270" ry = "180" fill = "url(#gradiente4)">
+                <animateMotion path="M 0 300 L 0 0" dur="5s" fill="freeze"/>                
+            </ellipse>
+            <polyline id="montana"points="5 706, 5 200, 100 200,608 250, 608 706" style = "fill:url(#gradiente2)"/>                
+            <polyline id="montana3"points=" 5 -100, 5 -140,400 -150, 700 -170 ,1133 -180, 1133 -100 ,1100 200 ,1126 706 " style = "fill:url(#gradiente6)"/>    
+            <polyline id="montana4"points=" 25 706, 100 560, 5 340, 40 200 ,5 -100, 500 -50,1133 -100, 1100 200 ,1126 706 " style = "fill:url(#gradiente7)"/>    
+            <polyline id="roca"points="100 200,128 230, 130 190" style = "fill:url(#gradiente5)">  
+                <animateMotion path="M 50 0 L 0 0" dur="2s" fill="freeze"/>               
+            </polyline>
+            <polyline id="roca2"points="300 450, 328 430, 230 390" style = "fill:url(#gradiente5)">          
+                <animateMotion path="M 50 20 L 100 0" dur="2s" fill="freeze"/>               
+            </polyline>
+            <polyline id="roca3"points="300 350, 328 330, 330 290" style = "fill:url(#gradiente5)">  
+                <animateMotion path="M 50 20 L 120 0" dur="2s" fill="freeze"/>               
+            </polyline>
+            <polyline id="sombras"points="608 250, 608 706,105 706, 300 550, 500 450" style = "fill:rgb(46, 29, 15)"/>                       
+            <polyline id="pierna"points="270 300, 240 300, 300 -300, 370 -300" style = "fill:rgb(0, 0, 0)">
+                <animateMotion path="M 0 0 L 0 40" dur="0.5s" fill="freeze"/>          
+            </polyline>    
+            <polyline id="pie"points="270 300, 240 300, 240 320, 270 320, 320 250, 290 250, 240 320" style = "fill:rgb(0, 0, 0)">
+            <animateMotion path="M 0 0 L 0 40" dur="0.5s" fill="freeze"/>          
+            </polyline>           
+            <circle id="cara1" r = "70" style = " fill : url(#gradiente3)">                
+                <animateMotion path="M 0 0 L 0 200" dur="5s" fill="freeze"/>          
+            </circle>
+            <line id="cuerpo" x1="610" y1="340" x2="580" y2="270" style = "stroke: rgb(5, 5, 5); stroke-width:25">
+                <animateMotion path="M 0 0 L 0 200" dur="5s" fill="freeze"/>          
+            </line>
+            <line id="brazo1" x1="600" y1="320" x2="710" y2="240" style = "stroke: rgb(5, 5, 5); stroke-width:25">
+                <animateMotion path="M 0 0 L 0 200" dur="5s" fill="freeze"/>          
+            </line>
+            <line id="brazo2" x1="710" y1="255" x2="670" y2="100" style = "stroke: rgb(5, 5, 5); stroke-width:25">
+                <animateMotion path="M 0 0 L 0 200" dur="5s" fill="freeze"/>          
+            </line>
+            <line id="brazo3" x1="600" y1="320" x2="510" y2="250" style = "stroke: rgb(5, 5, 5); stroke-width:25">            
+                <animateMotion path="M 0 0 L 0 200" dur="5s" fill="freeze"/>          
+            </line>
+            <line id="brazo4" x1="510" y1="260" x2="480" y2="100" style = "stroke: rgb(5, 5, 5); stroke-width:25">
+                <animateMotion path="M 0 0 L 0 200" dur="5s" fill="freeze"/>          
+            </line>
+            <line id="pierna1" x1="590" y1="290" x2="610" y2="180" style = "stroke: rgb(5, 5, 5); stroke-width:20">                                       
+                <animateMotion path="M 0 0 L 0 200" dur="5s" fill="freeze"/>          
+            </line> 
+            <line id="pierna2" x1="590" y1="290" x2="550" y2="170" style = "stroke: rgb(5, 5, 5); stroke-width:20">
+                <animateMotion path="M 0 0 L 0 200" dur="5s" fill="freeze"/>          
+            </line>
+            <polyline id="cinta1" points ="685 320, 660 340, 640 360, 590 360, 540 320, 590 360" style = "stroke: rgb(172, 25, 25); stroke-width:20;fill: rgb(194, 28, 28)">
+                <animateMotion path="M 0 0 L 0 200" dur="5s" fill="freeze"/>          
+            </polyline>
+            <polyline id="cinta4" points ="650 300, 589 250, 660 200, 589 250" style = "stroke: rgb(117, 17, 17); stroke-width:15;fill: rgb(128, 22, 22)">
+                <animateMotion path="M 0 0 L 0 200" dur="5s" fill="freeze"/>          
+            </polyline>
+            <polyline id="cinta5" points ="650 300, 589 200, 560 180, 589 200" style = "stroke: rgb(117, 17, 17); stroke-width:15;fill: rgb(128, 22, 22)">
+                <animateMotion path="M 0 0 L 0 200" dur="5s" fill="freeze"/>          
+            </polyline>
+        </defs>     
+        <rect x="0" y="0" width="100%" height="100%" rx="0" ry="0" fill = "url(#gradiente1)" style = "stroke: rgb(0, 0, 0); stroke-width:7"/>                   
+        <rect x="0%" y="0%" width="35%" height="100%" rx="0" ry="0"  style = "stroke: rgb(0, 0, 0); stroke-width:10; fill:rgba(255, 255, 255, 0)"/>
+        <rect x="35%" y="0%" width="65%" height="100%" rx="0" ry="0"  style = "stroke: rgb(0, 0, 0); stroke-width:10; fill:rgba(255, 255, 255, 0)"/>        
+        <use x="0%" y = "21%" xlink:href = "#montana"/>
+        <use x="0%" y = "21%" xlink:href = "#sombras"/>        
+        <use x="0%" y = "21%" xlink:href = "#pierna"/>
+        <use x="0%" y = "21%" xlink:href = "#pie"/>
+        <use x="0%" y = "21%" xlink:href = "#roca"/>        
+        <use x="0%" y = "21%" xlink:href = "#roca2"/>        
+        <use x="0%" y = "21%" xlink:href = "#roca3"/>    
+        <use x="35%" y = "21%" xlink:href = "#montana3"/>                    
+        <use x="35%" y = "21%" xlink:href = "#montana4"/>        
+        <use x="50%" y = "40%" xlink:href = "#nube"/>        
+        <use x="55%" y = "40%" xlink:href = "#nube"/>        
+        <use x="60%" y = "40%" xlink:href = "#nube"/>                  
+        <use x="80%" y = "50%" xlink:href = "#nube"/>        
+        <use x="85%" y = "50%" xlink:href = "#nube"/>        
+        <use x="90%" y = "50%" xlink:href = "#nube"/>  
+        <use x="50%" y = "90%" xlink:href = "#nube"/>        
+        <use x="55%" y = "90%" xlink:href = "#nube"/>        
+        <use x="60%" y = "90%" xlink:href = "#nube"/>  
+        <use x="35%" y = "16%" xlink:href = "#cuerpo"/>
+        <use x="35%" y = "16%" xlink:href = "#brazo1"/>
+        <use x="35%" y = "16%" xlink:href = "#brazo2"/>
+        <use x="35%" y = "16%" xlink:href = "#brazo3"/>
+        <use x="35%" y = "16%" xlink:href = "#brazo4"/>
+        <use x="35%" y = "16%" xlink:href = "#pierna1"/>
+        <use x="35%" y = "16%" xlink:href = "#pierna2"/>      
+        <use x="35%" y = "16%" xlink:href = "#cinta4"/>                  
+        <use x="35%" y = "16%" xlink:href = "#cinta5"/>                  
+        <use x="70%" y = "53%" xlink:href = "#cara1"/>        
+        <use x="35%" y = "16%" xlink:href = "#cinta1"/>        
+        <rect x="1%" y="80%" width="94%" height="15%" rx="0" ry="0" fill = "white" style = "stroke: rgb(0, 0, 0); stroke-width:5"/>
+        <text class="narrador" x="2%" y="90%" >             
+            Por eso empezo su entrenamiento
+        </text>     
+    </svg>    
+   
+    <a class="anterior" href="pagina3.html">Anterior</a>    
+</body>
+</html>

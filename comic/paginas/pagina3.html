@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/estiloPaginas.css" type="text/css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <svg width="1750" height = "900">     
+        <linearGradient id="gradiente1" x1="0" y1="0" x2="0" y2="100%">
+            <stop offset="60%" style="stop-color:rgb(142, 145, 199)"/>
+            <stop offset="100%" style="stop-color:rgb(106, 95, 173)"/>
+        </linearGradient>
+        <linearGradient id="gradiente2" x1="0" y1="0" x2="60%" y2="100%">
+            <stop offset="3%" style="stop-color:rgb(39, 39, 39)"/>
+            <stop offset="100%" style="stop-color:rgb(0, 0, 0)"/>
+        </linearGradient>            
+        <linearGradient id="gradiente3" x1="0" y1="0" x2="100%" y2="0%">
+            <stop offset="25%" style="stop-color:rgb(180, 125, 69)"/>
+            <stop offset="100%" style="stop-color:rgb(75, 52, 29)"/>
+        </linearGradient>  
+        <radialGradient id="gradiente4" x1="0" y1="0" x2="40%" y2="100%">
+            <stop offset="0%" style="stop-color:rgb(255, 255, 255)"/>            
+            <stop offset="100%" style="stop-color:rgba(255, 255, 255, 0.342)"/>            
+        </radialGradient> 
+        <defs>
+            <ellipse id="nube" rx = "200" ry = "80" fill = "url(#gradiente4)">
+                <animateMotion path="M 0 0 L 0 100" dur="15s" fill="freeze"/>                
+            </ellipse>
+            <circle id="cara1" r = "270" style = " fill : url(#gradiente2)" />
+            <circle id="cara2" r = "80" style = " fill : url(#gradiente2)" />
+            <circle id="cabeza" r = "200" style = " fill : url(#gradiente2)" />
+            <line id="cuerpo1" x1="270" y1="280" x2="90" y2="620" style = "stroke: rgb(5, 5, 5); stroke-width:50"/>
+            <line id="cuerpo2" x1="0" y1="160" x2="0" y2="230" style = "stroke: rgb(5, 5, 5); stroke-width:50"/>
+            <line id="cuerpo3" x1="0" y1="180" x2="0" y2="380" style = "stroke: rgb(5, 5, 5); stroke-width:30"/>
+            <line id="brazo" x1="230" y1="350" x2="300" y2="700" style = "stroke: rgb(5, 5, 5); stroke-width:50"/>
+            <line id="brazo2" x1="300" y1="700" x2="578" y2="450" style = "stroke: rgb(5, 5, 5); stroke-width:50"/>
+            <line id="brazo3" x1="230" y1="350" x2="200" y2="700" style = "stroke: rgb(5, 5, 5); stroke-width:50"/>            
+            <line id="brazo4" x1="230" y1="350" x2="15" y2="690" style = "stroke: rgb(5, 5, 5); stroke-width:50"/>   
+            <line id="brazo5" x1="330" y1="400" x2="570" y2="690" style = "stroke: rgb(5, 5, 5); stroke-width:50"/>                        
+            <line id="brazo6" x1="230" y1="460" x2="15" y2="690" style = "stroke: rgb(5, 5, 5); stroke-width:50"/>   
+            <line id="brazo7" x1="330" y1="460" x2="600" y2="690" style = "stroke: rgb(5, 5, 5); stroke-width:50"/>   
+            <line id="brazo8" x1="450" y1="590" x2="620" y2="690" style = "stroke: rgb(5, 5, 5); stroke-width:20"/>   
+            <line id="brazo9" x1="640" y1="600" x2="450" y2="695" style = "stroke: rgb(5, 5, 5); stroke-width:20"/>   
+            <line id="pierna1" x1="600" y1="1000" x2="620" y2="855" style = "stroke: rgb(5, 5, 5); stroke-width:20"/>   
+            <line id="pierna2" x1="480" y1="900" x2="470" y2="855" style = "stroke: rgb(5, 5, 5); stroke-width:20"/>   
+            <polyline id="cinta" points ="100 300,180 350, 210 400, 400 550 ,550 550" style = "stroke: rgb(206, 30, 30); stroke-width:60;fill: rgba(255, 255, 255, 0)"/>
+            <polyline id="cinta2" points ="550 550, 400 600, 250 650" style = "stroke: rgb(117, 17, 17); stroke-width:60;fill: rgb(128, 22, 22)"/>
+            <polyline id="cinta3" points ="100 300, 250 550" style = "stroke: rgb(117, 17, 17); stroke-width:60;fill: rgb(128, 22, 22)"/>
+            <polyline id="cinta4" points ="550 460, 600 700" style = "stroke: rgb(117, 17, 17); stroke-width:60;fill: rgb(128, 22, 22)"/>
+            <polyline id="cinta5" points ="550 429, 500 700" style = "stroke: rgb(206, 30, 30); stroke-width:60;fill: rgb(128, 22, 22)"/>
+            <polyline id="cinta6" points ="100 429,200 450,250 469 ,570 600" style = "stroke: rgb(173, 23, 23); stroke-width:60;fill: rgb(206, 30, 30)"/>
+            <polyline id="cinta7" points ="500 420,400 450,250 469 ,100 600, 40 650" style = "stroke: rgb(206, 30, 30); stroke-width:60;fill: rgb(206, 30, 30)"/>
+            <polyline id="cinta8" points ="80 380, 0 400, -100 400, -200 350, -100 400 " style = "stroke: rgb(206, 30, 30); stroke-width:25;fill: rgb(206, 30, 30)"/>
+            <polyline id="cinta9" points ="100 400, 200 350, 100 400, 0 400, -80 380 " style = "stroke: rgb(206, 30, 30); stroke-width:25;fill: rgb(206, 30, 30)"/>
+            <polyline id="montana" points ="-570 715, -500 670, -400 600, 595 600, 595 715" style = "fill: url(#gradiente3)"/>
+        </defs>             
+        <rect x="0" y="0" width="100%" height="100%" rx="0" ry="0" fill = "url(#gradiente1)" style = "stroke: rgb(0, 0, 0); stroke-width:7"/>                   
+        <rect x="0%" y="0%" width="33%" height="100%" rx="0" ry="0"  style = "stroke: rgb(0, 0, 0); stroke-width:10; fill:rgba(255, 255, 255, 0)"/>
+        <rect x="33%" y="0%" width="33%" height="50%" rx="0" ry="0"  style = "stroke: rgb(0, 0, 0); stroke-width:10; fill:rgba(255, 255, 255, 0)"/>
+        <rect x="66%" y="0%" width="34%" height="50%" rx="0" ry="0"  style = "stroke: rgb(0, 0, 0); stroke-width:10; fill:rgba(255, 255, 255, 0)"/>
+        <rect x="33%" y="50%" width="77%" height="50%" rx="0" ry="0"  style = "stroke: rgb(0, 0, 0); stroke-width:10; fill:rgba(255, 255, 255, 0)"/>                
+        <use x="50%" y = "65%" xlink:href = "#nube"/>
+        <use x="55%" y = "65%" xlink:href = "#nube"/>
+        <use x="60%" y = "65%" xlink:href = "#nube"/>
+        <use x="80%" y = "75%" xlink:href = "#nube"/>
+        <use x="85%" y = "75%" xlink:href = "#nube"/>
+        <use x="90%" y = "75%" xlink:href = "#nube"/>
+        <use x="16.5%" y = "35%" xlink:href = "#cara1"/>
+        <use x="-5%" y = "31%" xlink:href = "#cuerpo1"/>
+        <use x="-5%" y = "31%" xlink:href = "#cinta4"/>     
+        <use x="-5%" y = "31%" xlink:href = "#brazo"/>
+        <use x="-5%" y = "31%" xlink:href = "#brazo2"/>
+        <use x="-5%" y = "31%" xlink:href = "#brazo3"/>
+        <use x="-5%" y = "31%" xlink:href = "#cinta5"/>     
+        <use x="33%" y = "-28%" xlink:href = "#cinta3"/>        
+        <use x="33%" y = "-28%" xlink:href = "#cinta2"/>        
+        <use x="33%" y = "-28%" xlink:href = "#brazo4"/>
+        <use x="33%" y = "-28%" xlink:href = "#brazo5"/>
+        <use x="33%" y = "-28%" xlink:href = "#cinta"/>        
+        <use x="83%" y = "25%" xlink:href = "#cabeza"/>      
+        <use x="83%" y = "25%" xlink:href = "#cuerpo2"/>    
+        <use x="66%" y = "-28%" xlink:href = "#cinta6"/>          
+        <use x="66%" y = "-28%" xlink:href = "#cinta7"/>    
+        <use x="66%" y = "-28%" xlink:href = "#brazo6"/>
+        <use x="66%" y = "-28%" xlink:href = "#brazo7"/>
+        <use x="66%" y = "65%" xlink:href = "#cara2"/>
+        <use x="66%" y = "20%" xlink:href = "#cinta8"/>
+        <use x="66%" y = "20%" xlink:href = "#cinta9"/>
+        <use x="66%" y = "20%" xlink:href = "#montana"/>
+        <use x="66%" y = "53%" xlink:href = "#cuerpo3"/>
+        <use x="30%" y = "0%" xlink:href = "#brazo8"/>
+        <use x="40%" y = "0%" xlink:href = "#brazo9"/>
+        <use x="30%" y = "0%" xlink:href = "#pierna1"/>
+        <use x="40%" y = "0%" xlink:href = "#pierna2"/>        
+        <rect x="35%" y="80%" width="64%" height="15%" rx="0" ry="0" fill = "white" style = "stroke: rgb(0, 0, 0); stroke-width:5"/>
+        <text class="narrador" x="36%" y="90%" >             
+            ¡Queria ser más fuerte!
+        </text>     
+    </svg>
+    <a class="anterior" href="pagina2.html">Anterior</a>
+    <a class="siguiente" href="pagina4.html">Siguiente</a>
+</body>
+</html>
