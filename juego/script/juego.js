@@ -72,21 +72,29 @@ function nuevaPosicion(){
     var context = canvas.getContext("2d")    
     movimientoX+=velocidadesX      
     movimientoY+=velocidadesY
-    if(movimientoX>-1&&movimientoX<canvas.width-anchoCuadrado&&movimientoY>-1&&movimientoY<canvas.height-altoCuadrado){
+     if(movimientoX>-1&&movimientoX<canvas.width-anchoCuadrado&&movimientoY>-1&&movimientoY<canvas.height-altoCuadrado){
         context.fillStyle = "rgb(120,20,10)"
         context.fillRect(movimientoX, movimientoY, anchoCuadrado, altoCuadrado)
     }else{
         if(movimientoX<0){
             movimientoX=0
+            context.fillStyle = "rgb(120,20,10)"
+            context.fillRect(movimientoX, movimientoY, anchoCuadrado, altoCuadrado)
         }
         if(movimientoX>=canvas.width-anchoCuadrado){
             movimientoX=canvas.width-anchoCuadrado-1
+            context.fillStyle = "rgb(120,20,10)"
+            context.fillRect(movimientoX, movimientoY, anchoCuadrado, altoCuadrado)
         }
         if(movimientoY<0){
             movimientoY=0
+            context.fillStyle = "rgb(120,20,10)"
+            context.fillRect(movimientoX, movimientoY, anchoCuadrado, altoCuadrado)
         }
         if(movimientoY>=canvas.height-altoCuadrado){
             movimientoY=canvas.height-anchoCuadrado-1
+            context.fillStyle = "rgb(120,20,10)"
+            context.fillRect(movimientoX, movimientoY, anchoCuadrado, altoCuadrado)
         }        
     } 
     context.fillStyle = "rgb(10,200,10)"
