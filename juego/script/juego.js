@@ -11,11 +11,16 @@ var aceleracionInicial = 10;
 var aceleracion = aceleracionInicial;
 var posicionAleatoriaX;
 var posicionAleatoriaY;
+var posicionAleatoriaX2;
+var posicionAleatoriaY2;
 var puntuacion = 0;
+var velocidadProyectilAumentada = 5;
 var velocidadProyectil = 5;
 var proyectilX;
 var proyectilY;
-var colorCuadrado = "160,10,10";
+var colorCuadrado = "160,20,20";
+var banderaVelocidad = true;
+var velocidadLenta = 2
 
 
 document.onkeydown = function(e) {
@@ -27,7 +32,10 @@ document.onkeydown = function(e) {
 function empezarJuego(){    
     dibujarPunto()
     dibujarProyectil()
+    dibujarCongelar()
     setInterval(Actualizar, 20);
+    setInterval(dibujarCongelar, 30000);    
+
 }
 function Actualizar(){
     if (colisionProyectil()){        
@@ -35,11 +43,13 @@ function Actualizar(){
     }else{
         velocidadesX = 0;
         velocidadesY = 0;
+        Actualizarvelocidad()
         controles();
         limpiar();        
         nuevaPosicion();
         colisionPuntos();
         colisionProyectil();
+        colisionCongelar()        
         puntaje()
     }
     
@@ -58,9 +68,25 @@ function puntaje(){
     context.textAlign = "center";
     context.fillText(puntuacion, 100, 30);
 }
+function dibujarCongelar() {
+    var canvas = document.getElementById("myCanvas")
+    posicionAleatoriaX2 = NumAleatorio(canvas.width-anchoPuntos, 100) ;
+    posicionAleatoriaY2 = NumAleatorio (canvas.height-altoPuntos, 0) ;        
+}
+function ReiniciarVelocidad (){
+    banderaVelocidad = true;
+}
+function Actualizarvelocidad (){
+    if (banderaVelocidad){
+        velocidadProyectil = velocidadProyectilAumentada;
+    }else{
+        velocidadProyectil = velocidadLenta;
+        velocidadProyectilAumentada = 5;
+    }
+}
 function dibujarPunto() {
     var canvas = document.getElementById("myCanvas")
-    posicionAleatoriaX = NumAleatorio(canvas.width-anchoPuntos, 0) ;
+    posicionAleatoriaX = NumAleatorio(canvas.width-anchoPuntos, 100) ;
     posicionAleatoriaY = NumAleatorio (canvas.height-altoPuntos, 0) ;
 }
 function NumAleatorio(maximo, minimo){
@@ -105,6 +131,9 @@ function nuevaPosicion(){
     context.fillRect(proyectilX,proyectilY, 10, 10)
     proyectilX+=velocidadProyectil
 
+    context.fillStyle = "rgb(10,150,120)"
+    context.fillRect(posicionAleatoriaX2, posicionAleatoriaY2, anchoPuntos, altoPuntos)   
+    
     
    
 }
@@ -116,9 +145,23 @@ function colisionPuntos(){
         context.fillRect(posicionAleatoriaX, posicionAleatoriaY, anchoPuntos, altoPuntos)
         dibujarPunto()
         puntuacion += 10;
-        velocidadProyectil *= 1.05;
+        velocidadProyectilAumentada *= 1.1;
         velocidadesX *= 1.025
         velocidadesY *= 1.025
+    }
+}
+function colisionCongelar(){
+    var canvas = document.getElementById("myCanvas")
+    var context = canvas.getContext("2d")
+    if(colision(posicionAleatoriaX2, posicionAleatoriaY2, anchoPuntos, altoPuntos)){
+        fillStyle = "rgb("+colorCuadrado+")"
+        context.fillRect(posicionAleatoriaX2, posicionAleatoriaY2, anchoPuntos, altoPuntos)        
+        puntuacion += 15;
+        posicionAleatoriaX2 = -30;
+        posicionAleatoriaY2 = -30;
+        banderaVelocidad = false;
+        setInterval(ReiniciarVelocidad, 5000);
+
     }
 }
 
@@ -219,7 +262,3 @@ function controles(){
         aceleracion= aceleracionInicial
     }
 }
-
-
-
-
