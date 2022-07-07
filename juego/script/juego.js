@@ -1,4 +1,3 @@
-
 var movimientoX = 0;
 var movimientoY = 0;
 var velocidadesX;
@@ -10,12 +9,13 @@ var altoPuntos = 15;
 var tecla;
 var aceleracionInicial = 10;
 var aceleracion = aceleracionInicial;
-var posicionAleatoriaX
-var posicionAleatoriaY
+var posicionAleatoriaX;
+var posicionAleatoriaY;
 var puntuacion = 0;
 var velocidadProyectil = 5;
 var proyectilX;
 var proyectilY;
+var colorCuadrado = "160,10,10";
 
 
 document.onkeydown = function(e) {
@@ -36,11 +36,11 @@ function Actualizar(){
         velocidadesX = 0;
         velocidadesY = 0;
         controles();
-        limpiar();
-        puntaje()
+        limpiar();        
         nuevaPosicion();
         colisionPuntos();
         colisionProyectil();
+        puntaje()
     }
     
 }
@@ -72,30 +72,31 @@ function nuevaPosicion(){
     var context = canvas.getContext("2d")    
     movimientoX+=velocidadesX      
     movimientoY+=velocidadesY
-     if(movimientoX>-1&&movimientoX<canvas.width-anchoCuadrado&&movimientoY>-1&&movimientoY<canvas.height-altoCuadrado){
-        context.fillStyle = "rgb(120,20,10)"
+    if(movimientoX>-1&&movimientoX<canvas.width-anchoCuadrado&&movimientoY>-1&&movimientoY<canvas.height-altoCuadrado){
+        context.fillStyle = "rgb("+colorCuadrado+")"
         context.fillRect(movimientoX, movimientoY, anchoCuadrado, altoCuadrado)
     }else{
         if(movimientoX<0){
             movimientoX=0
-            context.fillStyle = "rgb(120,20,10)"
+            context.fillStyle = "rgb("+colorCuadrado+")"
             context.fillRect(movimientoX, movimientoY, anchoCuadrado, altoCuadrado)
         }
         if(movimientoX>=canvas.width-anchoCuadrado){
             movimientoX=canvas.width-anchoCuadrado-1
-            context.fillStyle = "rgb(120,20,10)"
+            context.fillStyle = "rgb("+colorCuadrado+")"
             context.fillRect(movimientoX, movimientoY, anchoCuadrado, altoCuadrado)
         }
         if(movimientoY<0){
             movimientoY=0
-            context.fillStyle = "rgb(120,20,10)"
+            context.fillStyle = "rgb("+colorCuadrado+")"
             context.fillRect(movimientoX, movimientoY, anchoCuadrado, altoCuadrado)
         }
         if(movimientoY>=canvas.height-altoCuadrado){
             movimientoY=canvas.height-anchoCuadrado-1
-            context.fillStyle = "rgb(120,20,10)"
+            context.fillStyle = "rgb("+colorCuadrado+")"
             context.fillRect(movimientoX, movimientoY, anchoCuadrado, altoCuadrado)
-        }        
+        }
+        aceleracion= aceleracionInicial        
     } 
     context.fillStyle = "rgb(10,200,10)"
     context.fillRect(posicionAleatoriaX, posicionAleatoriaY, anchoPuntos, altoPuntos)        
@@ -111,12 +112,16 @@ function colisionPuntos(){
     var canvas = document.getElementById("myCanvas")
     var context = canvas.getContext("2d")
     if(colision(posicionAleatoriaX, posicionAleatoriaY, anchoPuntos, altoPuntos)){
-        context.clearRect(posicionAleatoriaX, posicionAleatoriaY, anchoPuntos, altoPuntos)
+        fillStyle = "rgb("+colorCuadrado+")"
+        context.fillRect(posicionAleatoriaX, posicionAleatoriaY, anchoPuntos, altoPuntos)
         dibujarPunto()
         puntuacion += 10;
         velocidadProyectil *= 1.05;
+        velocidadesX *= 1.025
+        velocidadesY *= 1.025
     }
 }
+
 function colisionProyectil(){
     var canvas = document.getElementById("myCanvas")    
     if(colision(proyectilX,proyectilY, 10, 10)){
@@ -146,7 +151,7 @@ function gameOver(){
 function colision(x, y, ancho, alto){
     if((movimientoX>x||movimientoX+anchoCuadrado>x) && (movimientoX<x+ancho||movimientoX+anchoCuadrado<x+ancho)){        
         if((movimientoY>y||movimientoY+altoCuadrado>y) && (movimientoY<y+alto||movimientoY+altoCuadrado<y+alto)){
-            return true; 
+            return true;
         }
     }
 }
