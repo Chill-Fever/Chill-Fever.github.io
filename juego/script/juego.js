@@ -13,15 +13,15 @@ var posicionAleatoriaX;
 var posicionAleatoriaY;
 var posicionAleatoriaX2;
 var posicionAleatoriaY2;
-var puntuacion = 0;
-var velocidadProyectilAumentada = 5;
+var puntuacion = 1;
 var velocidadProyectil = 5;
+var velocidadProyectilAumentada = velocidadProyectil;
 var proyectilX;
 var proyectilY;
 var colorCuadrado = "160,20,20";
 var banderaVelocidad = true;
 var velocidadLenta = 2
-
+var texto= 1
 
 document.onkeydown = function(e) {
     tecla = e.key;
@@ -51,6 +51,8 @@ function Actualizar(){
         colisionProyectil();
         colisionCongelar()        
         puntaje()
+        aumentarDificultad()
+
     }
     
 }
@@ -63,10 +65,10 @@ function puntaje(){
     var canvas = document.getElementById("myCanvas")
     var context = canvas.getContext("2d")
     context.fillStyle = "rgb(0,0,0)"
-    context.font = "50px arial";
+    context.font = "20px arial";
     context.textBaseline = "middle";
     context.textAlign = "center";
-    context.fillText(puntuacion, 100, 30);
+    context.fillText("Puntos: "+puntuacion, 100, 30); 
 }
 function dibujarCongelar() {
     var canvas = document.getElementById("myCanvas")
@@ -81,7 +83,7 @@ function Actualizarvelocidad (){
         velocidadProyectil = velocidadProyectilAumentada;
     }else{
         velocidadProyectil = velocidadLenta;
-        velocidadProyectilAumentada = 5;
+        velocidadProyectilAumentada = 10;
     }
 }
 function dibujarPunto() {
@@ -123,6 +125,8 @@ function nuevaPosicion(){
             context.fillRect(movimientoX, movimientoY, anchoCuadrado, altoCuadrado)
         }
         aceleracion= aceleracionInicial        
+        context.fillStyle = "rgb("+colorCuadrado+")"
+        context.fillRect(movimientoX, movimientoY, anchoCuadrado, altoCuadrado)
     } 
     context.fillStyle = "rgb(10,200,10)"
     context.fillRect(posicionAleatoriaX, posicionAleatoriaY, anchoPuntos, altoPuntos)        
@@ -146,8 +150,8 @@ function colisionPuntos(){
         dibujarPunto()
         puntuacion += 10;
         velocidadProyectilAumentada *= 1.1;
-        velocidadesX *= 1.025
-        velocidadesY *= 1.025
+        velocidadesX *= 1.1
+        velocidadesY *= 1.1
     }
 }
 function colisionCongelar(){
@@ -164,11 +168,56 @@ function colisionCongelar(){
 
     }
 }
+function aumentarDificultad(){
+    var dificultad = Math.floor(puntuacion/10)
 
+    switch (dificultad) {
+        case 5:
+            texto = 2
+            velocidadProyectil *= 1.05
+            aceleracion *= 1.025    
+            break;
+        case 10:
+            texto = 3
+            velocidadProyectil *= 1.05
+            aceleracion *= 1.025    
+            break;
+        case 15:
+            texto = 3
+            velocidadProyectil *= 1.05
+            aceleracion *= 1.025    
+            break; 
+        case 20:
+            texto = 4
+            velocidadProyectil *= 1.05
+            aceleracion *= 1.025    
+            break;    
+        case 25:
+            texto = 5
+            velocidadProyectil *= 1.05
+            aceleracion *= 1.025    
+            break;     
+        case 30:
+            texto = 6
+            velocidadProyectil *= 1.05
+            aceleracion *= 1.025    
+            break;         
+        default:
+            break;
+    }
+    var canvas = document.getElementById("myCanvas")
+    var context = canvas.getContext("2d")
+    
+    context.fillStyle = "rgb(0,0,0)"
+    context.font = "20px arial";
+    context.textBaseline = "middle";
+    context.textAlign = "center";
+    context.fillText("Dificultad: "+"x"+texto, 500, 30);    
+}
 function colisionProyectil(){
     var canvas = document.getElementById("myCanvas")    
     if(colision(proyectilX,proyectilY, 10, 10)){
-        puntuacion++
+        puntuacion = puntuacion + (1*texto)
         dibujarProyectil()
     }
     if(proyectilX>-1&&proyectilX<canvas.width&&proyectilY>-1&&proyectilY<canvas.height){        
