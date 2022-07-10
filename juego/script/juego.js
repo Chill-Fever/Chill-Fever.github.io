@@ -14,7 +14,8 @@ var posicionAleatoriaY;
 var posicionAleatoriaX2;
 var posicionAleatoriaY2;
 var puntuacion = 1;
-var velocidadProyectil = 5;
+var velocidadProyectilInicial = 5;
+var velocidadProyectil = velocidadProyectilInicial;
 var velocidadProyectilAumentada = velocidadProyectil;
 var proyectilX;
 var proyectilY;
@@ -22,6 +23,7 @@ var colorCuadrado = "160,20,20";
 var banderaVelocidad = true;
 var velocidadLenta = 2
 var texto= 1
+var bandera = true;
 
 document.onkeydown = function(e) {
     tecla = e.key;
@@ -79,11 +81,17 @@ function ReiniciarVelocidad (){
     banderaVelocidad = true;
 }
 function Actualizarvelocidad (){
-    if (banderaVelocidad){
-        velocidadProyectil = velocidadProyectilAumentada;
+    if (banderaVelocidad && bandera){
+        velocidadProyectilAumentada = velocidadProyectilInicial
+        velocidadProyectil = velocidadProyectilAumentada;       
+        aceleracion = aceleracionInicial 
+        bandera = false;
     }else{
         velocidadProyectil = velocidadLenta;
-        velocidadProyectilAumentada = 10;
+        velocidadProyectilAumentada = 5;
+        aceleracion = 10
+        bandera = true; 
+        
     }
 }
 function dibujarPunto() {
@@ -149,9 +157,11 @@ function colisionPuntos(){
         context.fillRect(posicionAleatoriaX, posicionAleatoriaY, anchoPuntos, altoPuntos)
         dibujarPunto()
         puntuacion += 10;
-        velocidadProyectilAumentada *= 1.1;
+        velocidadProyectilInicial *= 1.05;
+        velocidadProyectilAumentada *= velocidadProyectilInicial;
         velocidadesX *= 1.1
         velocidadesY *= 1.1
+        return true
     }
 }
 function colisionCongelar(){
@@ -164,47 +174,48 @@ function colisionCongelar(){
         posicionAleatoriaX2 = -30;
         posicionAleatoriaY2 = -30;
         banderaVelocidad = false;
-        setInterval(ReiniciarVelocidad, 5000);
-
+        setTimeout(ReiniciarVelocidad, 5000);
+        return true
     }
 }
 function aumentarDificultad(){
     var dificultad = Math.floor(puntuacion/10)
-
-    switch (dificultad) {
-        case 5:
-            texto = 2
-            velocidadProyectil *= 1.05
-            aceleracion *= 1.025    
-            break;
-        case 10:
-            texto = 3
-            velocidadProyectil *= 1.05
-            aceleracion *= 1.025    
-            break;
-        case 15:
-            texto = 3
-            velocidadProyectil *= 1.05
-            aceleracion *= 1.025    
-            break; 
-        case 20:
-            texto = 4
-            velocidadProyectil *= 1.05
-            aceleracion *= 1.025    
-            break;    
-        case 25:
-            texto = 5
-            velocidadProyectil *= 1.05
-            aceleracion *= 1.025    
-            break;     
-        case 30:
-            texto = 6
-            velocidadProyectil *= 1.05
-            aceleracion *= 1.025    
-            break;         
-        default:
-            break;
-    }
+    if(colisionPuntos){
+        switch (dificultad) {
+            case 5:
+                texto = 2
+                velocidadProyectilInicial *= 1.005
+                aceleracionInicial *= 1.0025    
+                break;
+            case 10:
+                texto = 3
+                velocidadProyectilInicial *= 1.005
+                aceleracionInicial *= 1.0025    
+                break;
+            case 15:
+                texto = 3
+                velocidadProyectilInicial *= 1.005
+                aceleracionInicial *= 1.0025    
+                break; 
+            case 20:
+                texto = 4
+                velocidadProyectilInicial *= 1.005
+                aceleracionInicial *= 1.0025    
+                break;    
+            case 25:
+                texto = 5
+                velocidadProyectilInicial *= 1.005
+                aceleracionInicial *= 1.0025    
+                break;     
+            case 30:
+                texto = 6
+                velocidadProyectilInicial *= 1.5
+                aceleracionInicial *= 1.0025    
+                break;         
+            default:
+                break;
+        }
+    }    
     var canvas = document.getElementById("myCanvas")
     var context = canvas.getContext("2d")
     
