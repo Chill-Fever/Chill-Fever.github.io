@@ -23,7 +23,6 @@ var colorCuadrado = "160,20,20";
 var banderaVelocidad = true;
 var velocidadLenta = 2
 var texto= 1
-var bandera = true;
 
 document.onkeydown = function(e) {
     tecla = e.key;
@@ -81,17 +80,13 @@ function ReiniciarVelocidad (){
     banderaVelocidad = true;
 }
 function Actualizarvelocidad (){
-    if (banderaVelocidad && bandera){
-        velocidadProyectilAumentada = velocidadProyectilInicial
-        velocidadProyectil = velocidadProyectilAumentada;       
-        aceleracion = aceleracionInicial 
-        bandera = false;
+    if (banderaVelocidad){        
+        velocidadProyectil = velocidadProyectilAumentada   
+        console.log("Velocidad del proyectil: "+velocidadProyectilAumentada)          
     }else{
-        velocidadProyectil = velocidadLenta;
-        velocidadProyectilAumentada = 5;
-        aceleracion = 10
-        bandera = true; 
-        
+        velocidadProyectil = velocidadLenta;       
+        velocidadProyectilAumentada = velocidadProyectilInicial 
+        aceleracion = 10        
     }
 }
 function dibujarPunto() {
@@ -140,7 +135,7 @@ function nuevaPosicion(){
     context.fillRect(posicionAleatoriaX, posicionAleatoriaY, anchoPuntos, altoPuntos)        
 
     context.fillStyle = "rgb(10,10,200)"    
-    context.fillRect(proyectilX,proyectilY, 10, 10)
+    context.fillRect(proyectilX,proyectilY, 20, 20)
     proyectilX+=velocidadProyectil
 
     context.fillStyle = "rgb(10,150,120)"
@@ -156,9 +151,8 @@ function colisionPuntos(){
         fillStyle = "rgb("+colorCuadrado+")"
         context.fillRect(posicionAleatoriaX, posicionAleatoriaY, anchoPuntos, altoPuntos)
         dibujarPunto()
-        puntuacion += 10;
-        velocidadProyectilInicial *= 1.05;
-        velocidadProyectilAumentada *= velocidadProyectilInicial;
+        puntuacion += 10;        
+        velocidadProyectilAumentada *= 1.05
         velocidadesX *= 1.1
         velocidadesY *= 1.1
         return true
@@ -180,38 +174,56 @@ function colisionCongelar(){
 }
 function aumentarDificultad(){
     var dificultad = Math.floor(puntuacion/10)
-    if(colisionPuntos){
+    if(colisionPuntos||colisionCongelar){        
         switch (dificultad) {
             case 5:
                 texto = 2
-                velocidadProyectilInicial *= 1.005
-                aceleracionInicial *= 1.0025    
+                velocidadProyectilInicial = 7
+                velocidadProyectilAumentada = 7
+                aceleracionInicial = 11
                 break;
             case 10:
                 texto = 3
-                velocidadProyectilInicial *= 1.005
-                aceleracionInicial *= 1.0025    
+                velocidadProyectilInicial = 8
+                velocidadProyectilAumentada = 8
+                aceleracionInicial = 12
                 break;
             case 15:
-                texto = 3
-                velocidadProyectilInicial *= 1.005
-                aceleracionInicial *= 1.0025    
+                texto = 4
+                velocidadProyectilInicial = 9
+                velocidadProyectilAumentada = 9
+                aceleracionInicial = 13
                 break; 
             case 20:
-                texto = 4
-                velocidadProyectilInicial *= 1.005
-                aceleracionInicial *= 1.0025    
+                texto = 5
+                velocidadProyectilInicial = 10
+                velocidadProyectilAumentada = 10
+                aceleracionInicial = 14
                 break;    
             case 25:
-                texto = 5
-                velocidadProyectilInicial *= 1.005
-                aceleracionInicial *= 1.0025    
+                texto = 6
+                velocidadProyectilInicial = 12
+                velocidadProyectilAumentada = 12
+                aceleracionInicial = 15
                 break;     
             case 30:
-                texto = 6
-                velocidadProyectilInicial *= 1.5
-                aceleracionInicial *= 1.0025    
+                texto = 8
+                velocidadProyectilInicial = 13
+                velocidadProyectilAumentada = 13
+                aceleracionInicial = 16
                 break;         
+            case 35:
+                texto = 9
+                velocidadProyectilInicial = 17
+                velocidadProyectilAumentada = 17
+                aceleracionInicial = 17
+                break;   
+            case 40:
+                texto = 10
+                velocidadProyectilInicial = 20
+                velocidadProyectilAumentada = 20
+                aceleracionInicial = 20
+                break;                   
             default:
                 break;
         }
@@ -227,7 +239,7 @@ function aumentarDificultad(){
 }
 function colisionProyectil(){
     var canvas = document.getElementById("myCanvas")    
-    if(colision(proyectilX,proyectilY, 10, 10)){
+    if(colision(proyectilX,proyectilY, 20, 20)){
         puntuacion = puntuacion + (1*texto)
         dibujarProyectil()
     }
@@ -259,17 +271,9 @@ function colision(x, y, ancho, alto){
     }
 }
 function dibujarProyectil(){
-    var canvas = document.getElementById("myCanvas")
-    var bandera=NumAleatorio(0,1)
-    if(bandera==1){
-        proyectilX = 0;
-        proyectilY = 0
-    }else{
-        proyectilX = 0
-        proyectilY = NumAleatorio(canvas.width-10, 0) ;
-    }
-    
-    proyectilY = NumAleatorio (canvas.height-10, 0) ;
+    var canvas = document.getElementById("myCanvas")    
+    proyectilX = 0
+    proyectilY = NumAleatorio (canvas.height-20, 0) ;
 }
 function controles(){
     if (tecla && tecla == "ArrowLeft") {
@@ -319,6 +323,6 @@ function controles(){
         aceleracion+=0.25
     }
     if(!tecla){
-        aceleracion= aceleracionInicial
+        aceleracion = aceleracionInicial              
     }
 }
