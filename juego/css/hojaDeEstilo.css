@@ -1,11 +1,16 @@
 body{
     background-color: #000000;    
-    background-image: url("../img/fondoPagina.png") ;
+    background-image: url("../img/galaxia.png") ;
+    background-size: 2100px 2000px;
     justify-content: center;
-    background-repeat: space;
-    padding-left: 25%;
+    padding-left: 5%;
     padding-top: 5%;
     overflow: hidden
+}
+img tutorial {
+    margin-top: 15%;
+    float: right;
+    
 }
 canvas {    
     border-color: rgb(255, 255, 255);

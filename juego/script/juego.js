@@ -354,7 +354,7 @@ function gameOver(){
     context.textBaseline = "middle";
     context.textAlign = "center";
     context.fillStyle = "white"
-    context.fillText("(Recarga para jugar de nuevo)", 350, 210);
+    context.fillText("(Recarga con f5 para jugar de nuevo)", 350, 210);
 }
 function colision(x, y, ancho, alto){
     if((movimientoX>x||movimientoX+anchoCuadrado>x) && (movimientoX<x+ancho||movimientoX+anchoCuadrado<x+ancho)){        
