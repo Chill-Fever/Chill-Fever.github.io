@@ -6,8 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>    
     <script type="text/javascript" src="script/juego.js"></script>
+    <link rel="stylesheet" href="css/hojaDeEstilo.css" type="text/css">
 </head>
-<body onload="empezarJuego()">    
-    <canvas id="myCanvas" height="400" width="800" style="background-color: aquamarine;"></canvas>        
+<body onload="tituloJuego()">        
+    <canvas id="myCanvas" height="300" width="700" style="background-color: rgb(32, 28, 41);"></canvas>    
+    <button onclick="start()" id="botonInicio">JUGAR</button>
+    <img src="img/fondo.png" alt="Estrellas" id="estrellas" class="sprite">
+    <img src="img/Energia.png" alt="Energia" id="energia" class="sprite">
+    <img src="img/reloj.png" alt="Reloj" id="reloj" class="sprite">
+    <img src="img/asteroide.png" alt="Asteroide" id="asteroide" class="sprite">
+    <img src="img/nave.png" alt="Nave" id="nave" class="sprite">
+        
 </body>
 </html>

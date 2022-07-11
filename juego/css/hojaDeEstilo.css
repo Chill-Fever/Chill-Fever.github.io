@@ -1,0 +1,32 @@
+body{
+    background-color: #00A0B0;    
+    padding: 5%;
+}
+canvas {
+    border-color: rgb(211, 199, 139);
+    border-width: 10px;
+    border-style: solid;
+    margin: auto;
+    float: left;
+    
+}
+button {
+    float: left;
+    font-size: 70px;
+    color: white;
+    padding: 2%;
+    margin-left: 5%;
+    margin-top: 5%;
+    border-radius: 20px;
+    box-shadow: -10px 10px rgba(0, 0, 0, 0.151);
+    clear: right;
+    background-color: #E33B5A;   
+}
+button:hover:enabled{
+    box-shadow: -5px 5px rgba(15, 15, 15, 0.041);
+    background-color: #e3c43b;
+    cursor: pointer;
+}
+img.sprite {
+    visibility: hidden;
+}
