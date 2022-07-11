@@ -1,5 +1,5 @@
-var movimientoX = 350;
-var movimientoY = 150;
+var movimientoX = 300;
+var movimientoY = 100;
 var velocidadesX;
 var velocidadesY;
 var anchoCuadrado = 50;
