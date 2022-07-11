@@ -5,6 +5,7 @@ body{
     background-repeat: space;
     padding-left: 25%;
     padding-top: 5%;
+    overflow: hidden
 }
 canvas {    
     border-color: rgb(255, 255, 255);
@@ -44,4 +45,5 @@ button:hover:enabled{
 }
 img.sprite {
     visibility: hidden;
+    float: right;
 }
