@@ -25,7 +25,7 @@ var velocidadLenta = 2
 var texto= 1
 var movimientoFondo = 0
 var movimientoFondo2 = 0
-var velocidadFondoInicial = 10
+var velocidadFondoInicial = 8
 var velocidadFondo = velocidadFondoInicial
 const musicaFondo = new Audio("sound/background.mp3");
 const explosion = new Audio("sound/explosion.wav");
@@ -220,16 +220,9 @@ function nuevaPosicion(){
     context.fillStyle = "rgba(10,150,120,0)"
     context.fillRect(posicionAleatoriaX2, posicionAleatoriaY2, anchoPuntos, altoPuntos)   
     context.drawImage(reloj, posicionAleatoriaX2, posicionAleatoriaY2, anchoPuntos, altoPuntos)
-    
-    
-   
 }
-function colisionPuntos(){
-    var canvas = document.getElementById("myCanvas")
-    var context = canvas.getContext("2d")
-    if(colision(posicionAleatoriaX, posicionAleatoriaY, anchoPuntos, altoPuntos)){
-        fillStyle = "rgb("+colorCuadrado+")"
-        context.fillRect(posicionAleatoriaX, posicionAleatoriaY, anchoPuntos, altoPuntos)
+function colisionPuntos(){        
+    if(colision(posicionAleatoriaX, posicionAleatoriaY, anchoPuntos, altoPuntos)){        
         dibujarPunto()
         puntuacion += 10;        
         velocidadProyectilAumentada *= 1.05
@@ -240,11 +233,7 @@ function colisionPuntos(){
     }
 }
 function colisionCongelar(){
-    var canvas = document.getElementById("myCanvas")
-    var context = canvas.getContext("2d")
-    if(colision(posicionAleatoriaX2, posicionAleatoriaY2, anchoPuntos, altoPuntos)){
-        fillStyle = "rgb("+colorCuadrado+")"
-        context.fillRect(posicionAleatoriaX2, posicionAleatoriaY2, anchoPuntos, altoPuntos)        
+    if(colision(posicionAleatoriaX2, posicionAleatoriaY2, anchoPuntos, altoPuntos)){       
         puntuacion += 15;
         posicionAleatoriaX2 = -30;
         posicionAleatoriaY2 = -30;
