@@ -1,26 +1,35 @@
 body{
     background-color: #000000;    
-    padding: 5%;
+    background-image: url("../img/fondoPagina.png") ;
+    justify-content: center;
+    background-repeat: space;
+    padding-left: 25%;
+    padding-top: 5%;
 }
-canvas {
+canvas {    
     border-color: rgb(255, 255, 255);
     border-width: 10px;
     border-style: solid;
     margin: auto;
     float: left;
+    display: flex;
     
 }
 button {
+    display: flex;
+    align-items: center;
     float: left;
+    padding: 3%;
     font-size: 70px;
     color: white;
     padding: 2%;
-    margin-left: 5%;
+    clear: left;
     margin-top: 5%;
+    margin-left: 15%;
     border-style: none;
     border-radius: 20px;
     box-shadow: -10px 10px rgba(0, 0, 0, 0.151);
-    clear: right;
+    
     background-color: #E33B5A;   
 }
 button:disabled{
