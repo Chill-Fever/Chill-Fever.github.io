@@ -7,59 +7,77 @@
     <title>Document</title>
     <script src="js/pokemon.js"></script>
     <script src="js/navegar.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
 </head>
-<body>    
-    <header></header>
+<body onload="empezar()">    
+    <header>
+        <h1>Chill Dex</h1>
+        <p>
+            We show you everything about the pokemon of all generations...</p>
+        <ul>                                                                                               
+            <li><button onclick="navegar(-100) "id="anteriorx100">x100</button>    </li>
+            <li><button onclick="navegar(-10) "id="anteriorx10">x10</button>  </li>
+            <li><button onclick="navegar(-1) "id="anteriorx1">x1</button>  </li>
+            <li><button onclick="empezar()" id="empezar">Home</button></li>
+            <li><button onclick="navegar(1)" id="siguientex1">x1</button> </li>
+            <li><button onclick="navegar(10)" id="siguientex10">x10</button>   </li>
+            <li><button onclick="navegar(100)" id="siguientex100">x100</button>   </li>            
+        </ul>
+    </header>
     <article>
         <aside></aside>
         <div class="tablaPokemon">
             <table border="2px">
-                <tr>
-                    <td id="imagenFrontal"><img src="" alt="" id="imagenPokemon"></td>
-                    <td><img src="" alt="" id="imagenPokemon2"></td>
+                <tr id="titulo">
+                    <th colspan="2"><img src="" alt="" id="imagenPokemonPrincipal" height="200" width="200"><h1 id="nombrePokemon"></h1></th>               
                 </tr>                    
-                <tr> 
-                    <th colspan="2"><h1 id="nombrePokemon"></h1></th>               
+                <tr id="sprites" class="info"> 
+                    <td id="imagenFrontal"><img src="" alt="" id="imagenPokemon"></td>
+                    <td><img src="" alt="" id="imagenPokemon2"></td>                    
                 </tr>
-                <tr>
-                    <td id="tipoTitulo">Type</td>
+                <tr class="info">
+                    <td id="tipoTitulo" class="stats">Type</td>
                     <td id="tipos"></td>
-                </tr>
-                <tr>
-                    <td id="habilidadTitulo">Ability</td>
+                </tr class="info">
+                <tr class="info">
+                    <td id="habilidadTitulo" class="stats">Ability</td>
                     <td id="habilidades"></td>
+                </tr >
+                <tr class="titulo"> 
+                    <th colspan="2">stats</th>                                   
                 </tr>
-                <tr> 
-                    <th colspan="2"><h1>stats</h1></th>                                   
+                <tr class="info">
+                    <td class="stats">Xp base</td>
+                    <td id="xp"></td>
                 </tr>
-                <tr>
+                <tr class="info">
                     <td class="stats">Hp</td>
                     <td id="hp"></td>
                 </tr>
-                <tr>
+                <tr class="info">
                     <td class="stats">Attack</td>
                     <td id="attack"></td>
                 </tr>
-                <tr>
+                <tr class="info">
                     <td class="stats">Defense</td>
                     <td id="defense"></td>
                 </tr>
-                <tr>
+                <tr class="info">
                     <td class="stats">Special Attack</td>
                     <td id="special-attack"></td>
                 </tr>
-                <tr>
+                <tr class="info">
                     <td class="stats">Special Defense</td>
                     <td id="special-defense"></td>
                 </tr>
-                <tr>
+                <tr class="info">
                     <td class="stats">Speed</td>
                     <td id="speed"></td>
                 </tr>
-                <tr> 
-                    <th colspan="2"><h1>movements</h1></th>                                   
+                <tr class="titulo"> 
+                    <th colspan="2">movements</th>                                   
                 </tr>
-                <tr>
+                <tr class="info">
                     <td colspan="2"><p id="moves"></p></td>
                 </tr>
             </table>
@@ -67,13 +85,5 @@
         <aside></aside>
     </article>
     <footer></footer>
-    <button onclick="navegar(-100) "id="anteriorx100">x100</button>    
-    <button onclick="navegar(-10) "id="anteriorx10">x10</button>    
-    <button onclick="navegar(-1) "id="anteriorx1">x1</button>    
-    <button onclick="empezar()" id="empezar">Empezar</button>    
-    <button onclick="navegar(1)" id="siguientex1">x1</button>    
-    <button onclick="navegar(10)" id="siguientex10">x10</button>   
-    <button onclick="navegar(100)" id="siguientex100">x100</button>   
-
 </body>
 </html>

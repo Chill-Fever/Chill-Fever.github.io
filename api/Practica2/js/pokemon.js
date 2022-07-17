@@ -6,7 +6,10 @@ async function datosPokemon(id){
         var datos = await res.json()
         console.log(datos)
         var imagenPokemon = document.getElementById("imagenPokemon")
-        imagenPokemon.src = datos.sprites.front_default                 
+        imagenPokemon.src = datos.sprites.front_default       
+        var imagenPokemonOficial = document.getElementById("imagenPokemonPrincipal")          
+        imagenPokemonOficial.src = datos.sprites.other["official-artwork"].front_default
+
         if(datos.sprites.back_default ){
             var imagenPokemon2 = document.getElementById("imagenPokemon2")
             imagenPokemon2.src = datos.sprites.back_default 
@@ -14,14 +17,16 @@ async function datosPokemon(id){
             var imagenPokemon2 = document.getElementById("imagenPokemon2")
             imagenPokemon2.src = "img/pregunta.png"
         }
-        
+        document.getElementById("xp").innerHTML = datos.base_experience
         document.getElementById("nombrePokemon").innerHTML = datos.name + "<br> #" + datos.id
         var tipos = ""
         for (let i = 0; i < datos.types.length; i++) {
             if(i>0){
                 tipos = tipos + " / "
-                document.getElementById("tipoTitulo").innerHTML = "types"
-            }    
+                document.getElementById("tipoTitulo").innerHTML = "Types"
+            }else{
+                document.getElementById("tipoTitulo").innerHTML = "Type"
+            }
             tipos = tipos + datos.types[i].type.name        
         }        
         document.getElementById("tipos").innerHTML = tipos
@@ -30,7 +35,9 @@ async function datosPokemon(id){
         for (i = 0; i < datos.abilities.length; i++) {
             if(i>0){
                 habilidades = habilidades + " / "
-                document.getElementById("habilidadTitulo").innerHTML = "abilities"
+                document.getElementById("habilidadTitulo").innerHTML = "Abilities"
+            }else{
+                document.getElementById("habilidadTitulo").innerHTML = "Abilitie"
             }    
             habilidades = habilidades + datos.abilities[i].ability.name                    
             if(datos.abilities[i].is_hidden){
