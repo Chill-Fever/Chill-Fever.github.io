@@ -1,7 +1,7 @@
 var originalImage
 var filteredImageCanvas
 async function getImage(){
-    var url = "https://picsum.photos/200/200";    
+    var url = "https://picsum.photos/250/250";    
     var imagen = document.getElementById("imagen");
     imagen.crossOrigin = "Anonymous"
     
@@ -14,7 +14,10 @@ async function getImage(){
     setTimeout(incializar, 100)        
 }
 function incializar(){
+    var canvas = document.getElementById("imagen-original")
+    var context = canvas.getContext("2d")        
     originalImage = document.getElementById("imagen");            
+    context.drawImage(originalImage, 0, 0, 250, 250);    
     filteredImageCanvas = document.getElementById("filtered-image");                  
     var filter = LenaJS['mirror'];        
     LenaJS.filterImage(filteredImageCanvas, filter, originalImage);

@@ -7,31 +7,50 @@
     <title>Document</title>    
     <script src="node_modules/lena.js/dist/browser.js"></script>
     <script src="js/funciones.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
 </head>
-<body>        
-    <canvas id="filtered-image" height="200" width="200"></canvas>
-    <img id="imagen" src="" />
-    <button onclick="getImage()">Obtener imagen</button>    
-    <button onclick="incializar()">Reiniciar</button>    
-    <button onclick="boton('red')">Rojo</button>    
-    <button onclick="boton('blue')">Blue</button>    
-    <button onclick="boton('green')">Green</button>    
-    <button onclick="boton('highpass')">Highpass</button>    
-    <button onclick="boton('invert')">Invert</button>    
-    <button onclick="boton('laplacian')">Laplacian</button>    
-    <button onclick="boton('mirror')">Mirror</button>    
-    <button onclick="boton('noise')">Noise</button>    
-    <button onclick="boton('prewittHorizontal')">Prewitt X</button>    
-    <button onclick="boton('prewittVertical')">Prewitt Y</button>            
-    <button onclick="boton('roberts')">Roberts</button>    
-    <button onclick="boton('saturation')">Saturation</button>    
-    <button onclick="boton('sepia')">Sepia</button>    
-    <button onclick="boton('sharpen')">Sharpen</button>    
-    <button onclick="boton('sobelHorizontal')">Sobel X</button>    
-    <button onclick="boton('sobelVertical')">Sobel Y</button>    
-    <button onclick="boton('thresholding')">Thresholding</button>        
-    <button onclick="boton('lowpass3')">Lowpass 3x3</button>    
-    <button onclick="boton('lowpass5')">Lowpass 5x5</button>    
-
+<body>  
+    <img id="imagen" src="" />      
+    <table class="botonesImagen">
+        <tr class="imagenes">
+            <td colspan="2"><canvas id="imagen-original" height="250" width="250"></canvas></td>
+            <td colspan="2"><canvas id="filtered-image" height="250" width="250"></canvas></td>
+        </tr>
+        <tr>
+            <th colspan="2"><button onclick="getImage()">Obtener imagen</button></th>
+            <th  colspan="2"><button onclick="incializar()">Reiniciar</button></th>
+        </tr>        
+    </table>
+    <table class="botonesFiltros">
+        <tr>
+            <td><button onclick="boton('red')">Red</button></td>
+            <td><button onclick="boton('blue')">Blue</button></td>
+            <td><button onclick="boton('green')">Green</button></td>
+            <td><button onclick="boton('highpass')">Highpass</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="boton('invert')">Invert</button></td>
+            <td><button onclick="boton('laplacian')">Laplacian</button></td>
+            <td><button onclick="boton('mirror')">Mirror</button></td>
+            <td><button onclick="boton('noise')">Noise</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="boton('prewittHorizontal')">Prewitt X</button></td>
+            <td><button onclick="boton('prewittVertical')">Prewitt Y</button></td>
+            <td><button onclick="boton('sobelHorizontal')">Sobel X</button></td>
+            <td><button onclick="boton('sobelVertical')">Sobel Y</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="boton('roberts')">Roberts</button></td>
+            <td><button onclick="boton('saturation')">Saturation</button></td>
+            <td><button onclick="boton('sepia')">Sepia</button></td>
+            <td><button onclick="boton('sharpen')">Sharpen</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="boton('thresholding')">Thresholding</button></td>
+            <td><button onclick="boton('lowpass3')">Lowpass 3x3</button></td>
+            <td><button onclick="boton('lowpass5')">Lowpass 5x5</button></td>
+        </tr>
+    </table>
 </body>
 </html>
