@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>    
+    <script src="node_modules/lena.js/dist/browser.js"></script>
+    <script src="js/funciones.js"></script>
+</head>
+<body>        
+    <canvas id="filtered-image" height="200" width="200"></canvas>
+    <img id="imagen" src="" />
+    <button onclick="getImage()">Obtener imagen</button>    
+    <button onclick="incializar()">Reiniciar</button>    
+    <button onclick="boton('red')">Rojo</button>    
+    <button onclick="boton('blue')">Blue</button>    
+    <button onclick="boton('green')">Green</button>    
+    <button onclick="boton('highpass')">Highpass</button>    
+    <button onclick="boton('invert')">Invert</button>    
+    <button onclick="boton('laplacian')">Laplacian</button>    
+    <button onclick="boton('mirror')">Mirror</button>    
+    <button onclick="boton('noise')">Noise</button>    
+    <button onclick="boton('prewittHorizontal')">Prewitt X</button>    
+    <button onclick="boton('prewittVertical')">Prewitt Y</button>            
+    <button onclick="boton('roberts')">Roberts</button>    
+    <button onclick="boton('saturation')">Saturation</button>    
+    <button onclick="boton('sepia')">Sepia</button>    
+    <button onclick="boton('sharpen')">Sharpen</button>    
+    <button onclick="boton('sobelHorizontal')">Sobel X</button>    
+    <button onclick="boton('sobelVertical')">Sobel Y</button>    
+    <button onclick="boton('thresholding')">Thresholding</button>        
+    <button onclick="boton('lowpass3')">Lowpass 3x3</button>    
+    <button onclick="boton('lowpass5')">Lowpass 5x5</button>    
+
+</body>
+</html>
