@@ -79,9 +79,13 @@ div.imagen {
 div.CajaTexto{
     padding: 0;
     float: left;
-    margin-right: 20%;
-    width: 30%;
+    margin-right: 10%;
+    width: 40%;
 }
 h3{
     clear: both;
+}
+div.Video{
+    align-items: center;
+    text-align: center;
 }
