@@ -108,8 +108,8 @@
         position: fixed;
     }
     div.barras img{
-        height: 10%;
-        width: 10%;
+        height: 30%;
+        width: 30%;
     }
   }
   @media only screen and (min-width: 1200px) {
