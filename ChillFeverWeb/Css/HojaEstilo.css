@@ -49,8 +49,8 @@
     }
     div.barras img{
         float: right;
-        height: 30%;
-        width: 30%;
+        height: 10%;
+        width: 10%;
     }
   }
 @media only screen and (max-width: 1199px) and (min-width: 700px){
@@ -108,8 +108,8 @@
         position: fixed;
     }
     div.barras img{
-        height: 30%;
-        width: 30%;
+        height: 10%;
+        width: 10%;
     }
     a {
         color: white;        
