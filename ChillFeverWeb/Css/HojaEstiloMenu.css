@@ -1,0 +1,44 @@
+body {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    background-color: #181818;
+    font-family: "Open Sans",sans-serif;
+    color: #fff;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+div.logosRedes {    
+    align-items: center;
+    text-align: center;
+}
+div.logosRedes li{
+    display: inline;
+}
+
+div.logosRedes img{
+    height: 15%;
+    width: 15%;
+}
+ul {
+    text-align: center;
+    list-style-type: none;
+    margin-top: 10%;
+    margin-bottom: 30%;
+    padding: 0;
+}
+ul li {
+    font-size: medium;
+}
+div.LogoCF{
+    align-items: center;
+    text-align: center;
+    height: 50%;
+    width: 50%;
+}
+div.LogoCF img{
+    margin-left: 50%;
+    height: 100%;
+    width: 100%;
+}

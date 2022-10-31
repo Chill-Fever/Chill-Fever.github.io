@@ -1,91 +1,215 @@
-body {
-    font-size: 1.6rem;
-    line-height: 1.5;
-    background: #1d1d1d;
-    display: block;
-    min-width: 320px;
-    font-family: "Open Sans",sans-serif;
-    color: #fff;
-    padding-left: 13rem;
-    overflow-y: scroll;
-    overflow-x: hidden;
-}
-nav { display: block;
-    width: 13%;
-    background-color: #181818;
-    height: 100%;
-    position: fixed;
-    lefT: 0;
-    top: 0;
-    right: auto;
-    bottom: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
-nav div.logosRedes {    
-    align-items: center;
-    text-align: center;
-}nav div.logosRedes li{
-    
-    display: inline;
-}
-nav div.logosRedes img{
-    height: 10%;
-    width: 10%;
-}
-nav ul {
-    text-align: center;
-    list-style-type: none;
-    margin-top: 15%;
-    margin-bottom: 50%;
-    padding: 0;
-}
-nav ul li {
-    font-size: medium;
-}
-div.LogoCF{
-    margin-top: 15%;
-}
-div.LogoCF img{
-    height: 70%;
-    width: 100%;
-}
-section.Texto{
-    margin: 5%;
-    padding: 5%;
-}
-#portada {
-    height: 70%;
-    width: 70%;
-    text-align: center;
-}
-div.Portada{
-    align-items: center;
-    text-align: center;
-}
-nav div.NavBody {
-    margin: 0;
-    width: 100%;
-    height: 100%;
-}
-div.imagen {
-    display: inline;
-    width: 50%;
-}
-div.CajaTexto{
-    padding: 0;
-    float: left;
-    margin-right: 10%;
-    width: 40%;
-}
-h3{
-    clear: both;
-}
-div.Video{
-    align-items: center;
-    text-align: center;
-}
+@media only screen and (max-width: 699px){
+    body {
+        font-size: 1rem;
+        line-height: 1.5;
+        background: #1d1d1d;
+        display: block;
+        min-width: 320px;
+        font-family: "Open Sans",sans-serif;
+        color: #fff;
+        overflow-y: scroll;
+        overflow-x: hidden;    
+        align-items: center;
+        text-align: center;
+        padding-left: 2rem;
+        padding-right: 2rem;    
+    }
+    nav{
+        display: none;
+    }
+    #portada {
+        height: 90%;
+        width: 90%;
+        text-align: center;
+    }
+    div.Portada{
+        align-items: center;
+        text-align: center;
+    }
+    iframe{
+        align-items: center;
+        text-align: center;
+        width: 640px;
+        height: 360px;
+    }
+    div.LogoCF img{
+        height: 80%;
+        width: 80%;
+    }
+    h3{
+        clear: both;
+    }
+    div.Video{
+        align-items: center;
+        text-align: center;
+    }  
+    div.barras {
+        float: right;
+        position: fixed;
+    }
+    div.barras img{
+        float: right;
+        height: 7%;
+        width: 7%;
+    }
+  }
+@media only screen and (max-width: 1199px) and (min-width: 700px){
+    body {
+        font-size: 1rem;
+        line-height: 1.5;
+        background: #1d1d1d;
+        display: block;
+        min-width: 320px;
+        font-family: "Open Sans",sans-serif;
+        color: #fff;
+        padding-left: 2rem;
+        padding-right: 2rem;        
+        overflow-y: scroll;
+        overflow-x: hidden;    
+    }
+    nav{
+        display: none;
+    }
+    #portada {
+        height: 70%;
+        width: 70%;
+        text-align: center;
+    }
+    div.Portada{
+        align-items: center;
+        text-align: center;
+    }
+    iframe{
+        width: 560px;
+        height: 315px;
+    }
+    div.LogoCF img{
+        height: 80%;
+        width: 80%;
+    }
+    div.imagen {
+        display: inline;
+    }
+    div.CajaTexto{
+        padding: 0;
+        float: left;
+        margin-right: 10%;
+        width: 40%;
+    }
+    h3{
+        clear: both;
+    }
+    div.Video{
+        align-items: center;
+        text-align: center;
+    }  
+    div.barras {
+        float: right;
+        position: fixed;
+    }
+    div.barras img{
+        height: 10%;
+        width: 10%;
+    }
+  }
+  @media only screen and (min-width: 1200px) {
+    body {
+        font-size: 1.6rem;
+        line-height: 1.5;
+        background: #1d1d1d;
+        display: block;
+        min-width: 320px;
+        font-family: "Open Sans",sans-serif;
+        color: #fff;
+        padding-left: 13rem;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+    nav { display: block;
+        width: 13%;
+        background-color: #181818;
+        height: 100%;
+        position: fixed;
+        lefT: 0;
+        top: 0;
+        right: auto;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+    nav div.logosRedes {    
+        align-items: center;
+        text-align: center;
+    }nav div.logosRedes li{
+        
+        display: inline;
+    }
+    nav div.logosRedes img{
+        height: 10%;
+        width: 10%;
+    }
+    nav ul {
+        text-align: center;
+        list-style-type: none;
+        margin-top: 15%;
+        margin-bottom: 50%;
+        padding: 0;
+    }
+    nav ul li {
+        font-size: medium;
+    }
+    div.LogoCF{
+        margin-top: 15%;
+    }
+    div.LogoCF img{
+        height: 100%;
+        width: 100%;
+    }
+    section.Texto{
+        margin: 5%;
+        padding: 5%;
+    }
+    #portada {
+        height: 70%;
+        width: 70%;
+        text-align: center;
+    }
+    div.Portada{
+        align-items: center;
+        text-align: center;
+    }
+    nav div.NavBody {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+    }
+    div.imagen {
+        display: inline;
+        width: 50%;
+    }
+    div.CajaTexto{
+        padding: 0;
+        float: left;
+        margin-right: 10%;
+        width: 40%;
+    }
+    h3{
+        clear: both;
+    }
+    div.Video{
+        align-items: center;
+        text-align: center;
+    }  
+
+    iframe{
+        width: 1020px;
+        height: 530px;
+    }
+    div.barras {
+        display: none;
+    }
+  }
