@@ -121,6 +121,7 @@
     }
     a {
         color: white;        
+        text-decoration: none;
     }
   }
   @media only screen and (min-width: 1200px) {
@@ -222,5 +223,13 @@
     }
     div.barras {
         display: none;
+    }
+    a{
+        color: white;
+        text-decoration: none;
+    }
+    a :hover{
+        color: rgb(119, 80, 151);
+        cursor: pointer;        
     }
   }
