@@ -46,6 +46,7 @@
     div.barras {
         float: right;
         position: fixed;
+        margin-right: 1rem;
     }
     div.barras img{
         float: right;
@@ -114,6 +115,7 @@
     div.barras {
         float: right;
         position: fixed;
+        margin-left: 1rem;
     }
     div.barras img{
         height: 10%;
